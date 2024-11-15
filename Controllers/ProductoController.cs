@@ -23,20 +23,11 @@ public class ProductoController : ControllerBase
         repo.Create(producto);
         return Created("Producto creado",producto);
     }
-    /*[HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<Producto> Get()
+
+    [HttpPut("{id}")]
+    public ActionResult Update(int id,Producto updtProducto)
     {
-        using (var sqliteconex = new SqliteConnection("Data Source=Database/Tienda.db;"))
-        {
-            sqliteconex.Open();
-            var consulta = @"SELECT * FROM Productos;";
-            SqliteCommand comando = new SqliteCommand(consulta,sqliteconex);
-            var reader = comando.ExecuteReader();
-            while (reader.Read())
-            {
-                int salida = Convert.ToInt32(reader["IdProducto"]);
-            }
-            sqliteconex.Close();
-        }
-    }*/
+        repo.Update(id,updtProducto);
+        return Ok();
+    }
 }

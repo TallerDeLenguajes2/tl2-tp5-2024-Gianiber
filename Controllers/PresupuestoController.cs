@@ -23,4 +23,11 @@ public class PresupuestoController : ControllerBase
         repo.Create(presu);
         return Created("Presupuesto creado",presu);
     }
+
+    [HttpPost("{id}/ProductoDetalle")]
+    public ActionResult Post(int id,[FromBody] Producto prod,int cant)
+    {
+        repo.Add(id,prod,cant);
+        return Ok();
+    }
 }

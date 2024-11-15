@@ -14,10 +14,9 @@ namespace Tienda
 
         public Presupuestos(){}
 
-        public Presupuestos(string nombreDestinatario, List<PresupuestosDetalle> detalle)
+        public Presupuestos(string nombreDestinatario)
         {
             this.NombreDestinatario = nombreDestinatario;
-            this.detalle = detalle;
         }
         public int MontoPresupuesto(){
             int monto = 0;

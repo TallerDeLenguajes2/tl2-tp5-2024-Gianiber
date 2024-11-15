@@ -31,7 +31,7 @@ namespace RepositoriosTienda
                 while (reader.Read())
                 {
                     Producto producto = new Producto();
-                    producto.Idproducto = Convert.ToInt32(reader["IdProducto"]);
+                    producto.Idproducto = Convert.ToInt32(reader["idProducto"]);
                     producto.Descripcion = reader["Descripcion"].ToString();
                     producto.Precio = Convert.ToInt32(reader["Precio"]);
                     productos.Add(producto);
@@ -78,7 +78,7 @@ namespace RepositoriosTienda
             using (SqliteConnection sqliteconex = new SqliteConnection(cadenaConexion))
             {
                 sqliteconex.Open();
-                var consulta = $@"UPDATE Productos SET Descripcion = {producto.Descripcion}, Precio = {producto.Precio} WHERE idProducto = {id};";
+                var consulta = $@"UPDATE Productos SET Descripcion = {producto.Descripcion} WHERE idProducto = {id};";
                 SqliteCommand comando = new SqliteCommand(consulta,sqliteconex);
                 int reader = comando.ExecuteNonQuery();
                 sqliteconex.Close();
@@ -86,3 +86,4 @@ namespace RepositoriosTienda
         }
     }
 }
+//Precio = {producto.Precio}

@@ -14,6 +14,6 @@ namespace Tienda
         }
 
         public int Cantidad { get => cantidad; set => cantidad = value; }
-        internal Producto Producto { get => producto; set => producto = value; }
+        public Producto Producto { get => producto; set => producto = value; }
     }
 }
